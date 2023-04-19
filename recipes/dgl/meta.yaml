@@ -1,5 +1,5 @@
 {% set name = "dgl" %}
-{% set version = "0.8.1" %}
+{% set version = "0.8.2" %}
 {% set torch_proc_type = "cuda" if cuda_compiler_version != "None" else "cpu" %}
 
 package:
@@ -9,6 +9,8 @@ package:
 source:
   git_url: https://github.com/dmlc/dgl
   git_rev: {{ version }}
+  patches:
+    - conda-build.patch
 
 build:
   skip: true  # [(not linux) or (cuda_compiler_version in (undefined, 'None'))]
@@ -28,6 +30,7 @@ requirements:
     - cmake
     - llvm-openmp  # [osx]
     - libgomp      # [linux]
+
 
   host:
     - python
