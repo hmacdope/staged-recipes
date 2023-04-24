@@ -30,6 +30,15 @@ requirements:
     - cmake
     - llvm-openmp  # [osx]
     - libgomp      # [linux]
+    - dlpack ==0.3
+    - dmlc ==0.5
+    - gklib ==5.1.1
+    - metis ==5.1.0
+    - nanoflann
+    - parallel-hashmap
+    - thrust >=1.16.0
+    - xbyak ==5.992
+    - git 
 
 
   host:
@@ -45,6 +54,7 @@ requirements:
     - requests
     - tqdm
     - pytorch * *{{ torch_proc_type }}*
+    - psutil
     - tensorflow
 
 
@@ -72,3 +82,4 @@ about:
 extra:
   recipe-maintainers:
     - mikemhenry
+    - hmacdope
